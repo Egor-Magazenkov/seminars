@@ -2,12 +2,12 @@ project:
   type: website
 
 website:
-  site-url: https://berkeley-cdss.github.io/course-site-quarto/
+  # site-url: 
   sidebar:
     style: docked
-    title: "{{< var department-abbrev >}} {{< var number >}}"
-    logo: assets/stat_bear.png
-    logo-alt: "UC Berkeley Statistics logo"
+    title: "Semi-нары"
+    logo: assets/logo.jpeg
+    logo-alt: "Super logo"
     tools:
       - icon: github
         href: https://github.com/berkeley-cdss/course-site-quarto
@@ -15,21 +15,24 @@ website:
     contents:
       - href: index.qmd
         text: Home / Schedule
-      - href: syllabus.qmd
-        text: Syllabus
-      - href: staff.qmd
-        text: Staff
+      # - href: syllabus.qmd
+      #   text: Syllabus
+      # - href: staff.qmd
+      #   text: Staff
       - href: calendar.qmd
-        text: Calendar
-      - section: "Units"
+        text: Календарь
+      - href: data.qmd
+        text: Предложение темы
+      - section: "Циклы"
         contents:
           - units/unit1.qmd
-          - units/unit2.ipynb
-          - units/unit3.qmd
-      - href: data.qmd
-        text: Datasets
-      - href: license.qmd
-        text: License
+          # - units/unit2.qmd
+      - href: about.qmd
+        text: Формат, правила и договоренности
+      # - href: license.qmd
+      #   text: License
+    # render:   
+    #   - "about.md"
           
 
 format:
