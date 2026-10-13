@@ -74,7 +74,7 @@
     "href": "units/unit1.html",
     "title": "Action модели: устройство и применение в робототехнике",
     "section": "",
-    "text": "Краткое описание видения темы:\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n\n\nПодача тем на данный цикл\n\nЗагрузка…",
+    "text": "Краткое описание видения темы:\n\nОтносительно новый и популярный подход сейчас к управлению роботом (чаще манипулятором) заключается в генерации последовательности действий (action-ов) на основе визуальной и другой информации. Например, широкое распространение получили VLA (Vision-Language-Action) модели, такие как Pi_0, объединяющие визуальную состовляющую с языковой командой для генерации действий манипулятора при решении сложных задач.\nОднако как это все работает? Из каких математико-нейросетевых частей состоит? Какими свойствами обладает на практике и насколько действительно хорошо работает? Все это будем рады обсудить в данном цикле, посвященным всему, связанному с action generation моделями.\n\n\n\nПодача тем на данный цикл\nТемы принимаются до 21 октября\n\nЗагрузка…",
     "crumbs": [
       "Циклы",
       "Action модели: устройство и применение в робототехнике"
