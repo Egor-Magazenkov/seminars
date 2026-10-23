@@ -1,0 +1,50 @@
+{% for row in seminars %}
+<div style="border: 1px solid #e3e5e8; border-radius: 6px; padding: 20px; margin-bottom: 25px; background-color: #fafbfc; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+
+  <!-- Topic -->
+  <h4 style="margin-top: 0; margin-bottom: 5px; font-weight: bold; color: #212529;max-width: 90%">
+    {{ row['Тема доклада'] }}
+  </h4>
+
+  <!-- Author and Info -->
+  <p style="color: #6c757d; font-style: italic; margin-bottom: 15px; font-size: 0.95em; line-height: 15px;text-align: right; margin-left: auto; max-width: 60%">
+    <strong>{{ row['Фамилия Имя'] }}</strong> <br> {{ row['Краткая информация о себе'] }}
+  </p>
+
+  <!-- Abstract -->
+  <p style="margin-bottom: 15px; color: #495057; line-height: 1.6;">
+  <blockquote style="border-left: none;">
+    {% if row['Краткая аннотация'] %}
+      {{ row['Краткая аннотация'] | replace('\n', '<br>') }}
+	{% else %}
+	  Аннотация скоро появится...
+    {% endif %}
+  </blockquote>
+  </p>
+
+  <!-- Requirements (Blue bold header) -->
+  <!-- <p style="margin-bottom: 1px;"> -->
+  <!--   {% if row['Пререквизиты'] %} -->
+  <!--   Пререквизиты и полезные ссылки -->
+  <!-- <ul style="margin-top: 0; padding-left: 20px; margin-bottom: 15px; color: #495057;"> -->
+  <!--     <li>{{ row['Пререквизиты'] }}</li> -->
+  <!-- </ul> -->
+  <!--   {% endif %} -->
+  <!-- </p> -->
+
+  <!-- Collapsible Content -->
+  <details>
+    <summary style="cursor: pointer; color: #6c757d; font-weight: 500; outline: none;">
+      Развернуть содержание доклада
+    </summary>
+    <p style="margin-top: 10px; padding-left: 15px; border-left: 3px solid #dee2e6; color: #495057;">
+  {% if row['Краткое содержание доклада = основные рассматриваемые пункты, понятия, результаты'] %}
+      {{ row['Краткое содержание доклада = основные рассматриваемые пункты, понятия, результаты'] | replace('\n', '<br>') }}
+  {% else %}
+  	Скоро появится...
+  {% endif %}
+    </p>
+  </details>
+
+</div>
+{% endfor %}
