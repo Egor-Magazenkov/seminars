@@ -169,7 +169,6 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#краткое-описание-видения-темы" id="toc-краткое-описание-видения-темы" class="nav-link active" data-scroll-target="#краткое-описание-видения-темы">Краткое описание видения темы:</a></li>
   <li><a href="#темы-семинаров" id="toc-темы-семинаров" class="nav-link" data-scroll-target="#темы-семинаров">Темы семинаров</a></li>
-  <li><a href="#подача-тем-на-данный-цикл" id="toc-подача-тем-на-данный-цикл" class="nav-link" data-scroll-target="#подача-тем-на-данный-цикл">Подача тем на данный цикл</a></li>
   </ul>
 </nav>
     </div>
@@ -179,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../units/unit1.html">Циклы</a></li><li class="breadcrumb-item"><a href="../units/unit1.html">Action модели: устройство и применение в робототехнике</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Action модели: устройство и применение в робототехнике</h1>
-<p class="subtitle lead">Цикл начнется с 9 ноября</p>
+<p class="subtitle lead">Цикл начнется с 12 ноября</p>
 </div>
 
 
@@ -217,19 +216,31 @@ Flow matching как альтернатива diffusion подходу в зад
 <!-- Abstract -->
 <p style="margin-bottom: 15px; color: #495057; line-height: 1.6;">
 </p><blockquote style="border-left: none;" class="blockquote">
-<p>Аннотация скоро появится…</p>
+<p>Следующим после пика диффузионных моделей в 2020-21 годах (а до робототехники дошедшим годами позже) появляется концепция Flow matching (FM) для все той же генеративной задачи. При этом, чем больше на них смотришь вместе, тем больше схожего можно найти. В робототехнику Flow matching тоже пришел, и, после появления в Pi0 (которые заявляют, что они первыми сделали VLA с FM), никуда не уходил, практически полностью вытеснив диффузионные подходы в направлении генерации действий для роботов. Наверное, самое простое — это показать численные сравнения, в большинстве из которых FM превосходит диффузию; однако мы также порассуждаем о теоретических отличиях, которые влияют на выбор именно FM, в особенности, в задачах робототехники и генерации действий. На самом семинаре в первой части кратко разберем основные теоретические подоплеки обоих методов, а вторую часть посвятим вопросам использования этих методов для генерации действий, сравним их и найдем ключевые отличия в использовании.</p>
 </blockquote>
 <p></p>
-<p><!-- Requirements (Blue bold header) --> <!-- <p style="margin-bottom: 1px;"> --> <!--    --> <!-- </p> --></p>
+<p><!-- Requirements (Blue bold header) --> <!-- <p style="margin-bottom: 1px;"> --> <!--    --> <!--   Пререквизиты и полезные ссылки --> <!-- <ul style="margin-top: 0; padding-left: 20px; margin-bottom: 15px; color: #495057;"> --> <!--     <li>Базовая теория вероятности (плотность распределения, условные вероятности)
+Приветствуются знания различных генеративных моделей, в частности в задачах VA/VLA </li> --> <!-- </ul> --> <!--    --> <!-- </p> --></p>
 <!-- Collapsible Content -->
 <details>
 <summary style="cursor: pointer; color: #6c757d; font-weight: 500; outline: none;">
 Развернуть содержание доклада
 </summary>
-<p style="margin-top: 10px; padding-left: 15px; border-left: 3px solid #dee2e6; color: #495057;">
-</p><p>Скоро появится…</p>
-<p></p>
+<!-- <p style="margin-top: 10px; padding-left: 15px; border-left: 3px solid #dee2e6; color: #495057;"> -->
+<div style="margin-top: 10px; padding-left: 25px; font-size: 0.9em; color: #495057;">
+<ol type="1">
+<li>Что такое генеративная модель и зачем вообще генерировать действия для робота?</li>
+<li>Про diffusion в двух словах</li>
+<li>Про flow matching в трех словах</li>
+<li>Отличия, схожести в теории — а не одно и то же ли это?</li>
+<li>Применения в робототехнике на примерах популярных статей</li>
+<li>Численные сравнения чистых FM и Diffusion</li>
+<li>Интуиция, подкрепленная теорией: а какие отличия так влияют на эту разницу</li>
+<li>Выводы и дискуссия = мое и общее мнение
+</li></ol></div>
+<!-- </p> -->
 </details>
+
 </div>
 <div style="border: 1px solid #e3e5e8; border-radius: 6px; padding: 20px; margin-bottom: 25px; background-color: #fafbfc; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
 <!-- Topic -->
@@ -243,18 +254,23 @@ Guidance in conditional flow matching.
 <!-- Abstract -->
 <p style="margin-bottom: 15px; color: #495057; line-height: 1.6;">
 </p><blockquote style="border-left: none;" class="blockquote">
-<p>Аннотация скоро появится…</p>
+<p>Доклад посвящен развитию идеи использования генеративных моделей, основанных на потоках в робототехнике путем добавления контроля за направлением пути расшумления, который позволяет накладывать требуемые условия на прогнозируемые моделью значения. Примерами сигнала для такого управления являются: текстовые промпты, информация до расстояния с препятствиями, кинематические и динамические ограничения и тд. В рамках семинара будут изучены основные подходы, применяемые для управления процессом расшумления: Стандартное направление, Управление без классификатора и Управление с классификатором. Большое внимание уделим примерам применения и аспектам имплемантации</p>
 </blockquote>
 <p></p>
-<p><!-- Requirements (Blue bold header) --> <!-- <p style="margin-bottom: 1px;"> --> <!--    --> <!-- </p> --></p>
+<p><!-- Requirements (Blue bold header) --> <!-- <p style="margin-bottom: 1px;"> --> <!--    --> <!--   Пререквизиты и полезные ссылки --> <!-- <ul style="margin-top: 0; padding-left: 20px; margin-bottom: 15px; color: #495057;"> --> <!--     <li>1. Функции плотностей распределения, условная и безусловная вероятность
+2. Векторные поля, градиент, производная по направлению, ODE
+3. Conditional Flow Matching
+</li> --> <!-- </ul> --> <!--    --> <!-- </p> --></p>
 <!-- Collapsible Content -->
 <details>
 <summary style="cursor: pointer; color: #6c757d; font-weight: 500; outline: none;">
 Развернуть содержание доклада
 </summary>
-<p style="margin-top: 10px; padding-left: 15px; border-left: 3px solid #dee2e6; color: #495057;">
-</p><p>Скоро появится…</p>
-<p></p>
+<!-- <p style="margin-top: 10px; padding-left: 15px; border-left: 3px solid #dee2e6; color: #495057;"> -->
+<div style="margin-top: 10px; padding-left: 25px; font-size: 0.9em; color: #495057;">
+Скоро появится…
+</div>
+<!-- </p> -->
 </details>
 </div>
 <div style="border: 1px solid #e3e5e8; border-radius: 6px; padding: 20px; margin-bottom: 25px; background-color: #fafbfc; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
@@ -278,23 +294,24 @@ Guidance in conditional flow matching.
 <summary style="cursor: pointer; color: #6c757d; font-weight: 500; outline: none;">
 Развернуть содержание доклада
 </summary>
-<p style="margin-top: 10px; padding-left: 15px; border-left: 3px solid #dee2e6; color: #495057;">
-</p><p>Скоро появится…</p>
-<p></p>
+<!-- <p style="margin-top: 10px; padding-left: 15px; border-left: 3px solid #dee2e6; color: #495057;"> -->
+<div style="margin-top: 10px; padding-left: 25px; font-size: 0.9em; color: #495057;">
+Скоро появится…
+</div>
+<!-- </p> -->
 </details>
 </div>
-</section>
 <section id="подача-тем-на-данный-цикл" class="level3">
 <h3 class="anchored" data-anchor-id="подача-тем-на-данный-цикл"><a href="https://docs.google.com/forms/d/e/1FAIpQLSer02UsYI_6kQwQlnL5CEa3la_L_qHFEip9wln_eCWAv87uuA/viewform?usp=dialog">Подача тем на данный цикл</a></h3>
-<p>Темы принимаются <strong>до 21 октября</strong></p>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSer02UsYI_6kQwQlnL5CEa3la_L_qHFEip9wln_eCWAv87uuA/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">
-Загрузка…
-</iframe>
+<p><del>Темы принимаются <strong>до 22 октября</strong></del> Приём тем закрыт.</p>
+<!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSer02UsYI_6kQwQlnL5CEa3la_L_qHFEip9wln_eCWAv87uuA/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe> -->
 
 
 </section>
+</section></main></div>
 
-</main> <!-- /main -->
+
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -695,7 +712,7 @@ Guidance in conditional flow matching.
     }
   });
   </script>
-</div> <!-- /content -->
+ <!-- /content -->
 
 
 
