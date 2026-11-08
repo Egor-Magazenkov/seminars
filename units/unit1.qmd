@@ -1,6 +1,6 @@
 ---
 title: "Action модели: устройство и применение в робототехнике"
-subtitle: "Цикл начнется с 9 ноября"
+subtitle: "Цикл начнется с 12 ноября"
 ---
 
 ### Краткое описание видения темы:
@@ -13,15 +13,15 @@ subtitle: "Цикл начнется с 9 ноября"
 ```{python}
 #| echo: false
 #| output: "asis"
-from topics_parser import csv_to_html
 
-csv_to_html("./topics/unit1.csv")
+from topics_parser import csv_to_html
+csv_to_html("./topics/unit1_ActionModels.csv")
 ```
 
 
 ### [Подача тем на данный цикл](https://docs.google.com/forms/d/e/1FAIpQLSer02UsYI_6kQwQlnL5CEa3la_L_qHFEip9wln_eCWAv87uuA/viewform?usp=dialog)
 
-Темы принимаются **до 21 октября**
+~~Темы принимаются **до 22 октября**~~ Приём тем закрыт.
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSer02UsYI_6kQwQlnL5CEa3la_L_qHFEip9wln_eCWAv87uuA/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+<!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSer02UsYI_6kQwQlnL5CEa3la_L_qHFEip9wln_eCWAv87uuA/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe> -->
 

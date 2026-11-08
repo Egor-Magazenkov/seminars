@@ -15,7 +15,7 @@
   <p style="margin-bottom: 15px; color: #495057; line-height: 1.6;">
   <blockquote style="border-left: none;">
     {% if row['Краткая аннотация'] %}
-      {{ row['Краткая аннотация'] | replace('\n', '<br>') }}
+      {{ row['Краткая аннотация'] }}
 	{% else %}
 	  Аннотация скоро появится...
     {% endif %}
@@ -37,13 +37,11 @@
     <summary style="cursor: pointer; color: #6c757d; font-weight: 500; outline: none;">
       Развернуть содержание доклада
     </summary>
-    <p style="margin-top: 10px; padding-left: 15px; border-left: 3px solid #dee2e6; color: #495057;">
-  {% if row['Краткое содержание доклада = основные рассматриваемые пункты, понятия, результаты'] %}
-      {{ row['Краткое содержание доклада = основные рассматриваемые пункты, понятия, результаты'] | replace('\n', '<br>') }}
-  {% else %}
-  	Скоро появится...
-  {% endif %}
-    </p>
+    <!-- <p style="margin-top: 10px; padding-left: 15px; border-left: 3px solid #dee2e6; color: #495057;"> -->
+	<div style="margin-top: 10px; padding-left: 25px; font-size: 0.9em; color: #495057;">
+	  {{- row['Краткое содержание доклада = основные рассматриваемые пункты, понятия, результаты'] | default('Скоро появится...', true) | string }}
+    </div>
+    <!-- </p> -->
   </details>
 
 </div>

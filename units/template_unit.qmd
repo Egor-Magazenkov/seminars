@@ -1,6 +1,7 @@
 ---
 title: ""
 subtitle: "Цикл начнется с "
+draft: true
 ---
 
 ### Краткое описание видения темы:
@@ -15,7 +16,7 @@ subtitle: "Цикл начнется с "
 #| output: "asis"
 from topics_parser import csv_to_html
 
-csv_to_html("./topics/unit1.csv")
+# csv_to_html("./topics/")
 ```
 
 
